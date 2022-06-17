@@ -2,6 +2,7 @@ version: '3'
 services:
 
   back-end:
+    build: .
     image: "students.jar"
     container_name: students.jar
     ports:
@@ -9,6 +10,7 @@ services:
     environment:
       - SPRING.PROFILES.ACTIVE=default
   front-end:
+    build: frontend/students/
     image: "students-ui"
     container_name: students-ui
     ports:
