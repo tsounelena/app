@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  back-end:
+    image: "students.jar"
+    container_name: students.jar
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING.PROFILES.ACTIVE=default
+  front-end:
+    image: "students-ui"
+    container_name: students-ui
+    ports:
+      - "3000:3000"
+    links:
+      - back-end
